@@ -1,167 +1,109 @@
-# QubiLearn - Qubic Smart Contract Learning Platform
+**QubiLearn** is a modern, AI-powered, and fully interactive learning suite built to onboard developers and enthusiasts into the **Qubic blockchain ecosystem**. It delivers a structured educational experience focused on teaching smart contract development using C++, with no wallet setup or backend dependencies.
 
-A comprehensive, frontend-only educational platform for learning C++ smart contract development on the Qubic blockchain.
+Whether you're a blockchain beginner, an experienced C++ dev, or a project looking to onboard contributors — QubiLearn gives you the tools, knowledge, and interactive features to become productive on Qubic in record time.
 
-## Features
 
-- **Interactive Courses**: Learn through structured lessons with progress tracking
-- **AI Tutor**: Get personalized help with OpenAI GPT-4 integration
-- **Code Editor**: Practice with Monaco Editor and C++ syntax highlighting
-- **Quiz System**: Test your knowledge with interactive quizzes
-- **Badge System**: Earn Soulbound Tokens (SBTs) for achievements
-- **Progress Tracking**: Monitor your learning journey
-- **Responsive Design**: Works perfectly on all devices
-- **Dark/Light Mode**: Toggle between themes
-- **Simulated Blockchain**: Mock Qubic RPC interactions
+## ✨ Core Features
 
-## Getting Started
+### 📘 Course System
 
-### Prerequisites
+A modular course engine that covers:
 
-- Node.js 18+
-- npm or yarn
+* Qubic architecture fundamentals
+* Writing and deploying C++ smart contracts
+* Real-world dApp use cases on Qubic
 
-### Installation
+Lessons include visual walkthroughs, explanations, diagrams, and code examples. Progress is saved automatically, allowing users to pick up where they left off.
 
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
+### 📝 Interactive Quizzes
 
-### OpenAI Integration
+Each lesson ends with multiple-choice quizzes designed to test comprehension and reinforce learning:
 
-To use the AI tutor:
+* Real-time feedback on answers
+* Retry and retake support
+* Quiz scores tracked locally
+* Completion earns you digital badges
 
-1. Get an OpenAI API key from https://platform.openai.com/
-2. Click the settings icon in the AI chat
-3. Enter your API key (stored locally)
 
-## Project Structure
+### 💻 Live Code Editor
 
-```
-src/
-├── components/          # Reusable UI components
-│   ├── CourseCard.tsx
-│   ├── CourseViewer.tsx
-│   ├── Quiz.tsx
-│   ├── CodeEditor.tsx
-│   ├── AIChat.tsx
-│   ├── BadgeModal.tsx
-│   └── ProgressTracker.tsx
-├── pages/              # Route components
-│   ├── Home.tsx
-│   ├── CoursesPage.tsx
-│   ├── CoursePage.tsx
-│   └── Profile.tsx
-├── data/               # Static data files
-│   ├── courses.json
-│   ├── quizzes.json
-│   └── templates.json
-├── utils/              # Utility functions
-│   ├── openai.ts
-│   ├── qubicRpcSimulator.ts
-│   └── localStorage.ts
-├── contexts/           # React contexts
-│   └── ThemeContext.tsx
-└── types/              # TypeScript definitions
-    └── index.ts
-```
+Embedded **Monaco Editor** with:
 
-## Adding New Content
+* Full C++ syntax support
+* Starter templates for ERC20-style tokens, voting contracts, and more
+* Instant editing and simulation
+* Preview Qubic-compliant contract structure in real-time
 
-### Adding a New Course
+### 🧠 AI Learning Assistant
 
-1. Edit `src/data/courses.json`:
-   ```json
-   {
-     "id": "new-course",
-     "title": "New Course Title",
-     "description": "Course description",
-     "difficulty": "Beginner",
-     "estimatedTime": "2 hours",
-     "prerequisites": [],
-     "lessons": [
-       {
-         "id": "lesson-1",
-         "title": "Lesson Title",
-         "content": "# Lesson Content\n\nMarkdown content here...",
-         "codeExample": "// C++ code example",
-         "estimatedTime": "15 min",
-         "hasQuiz": true
-       }
-     ]
-   }
-   ```
+Powered by **OpenAI GPT-4**, the tutor answers:
 
-2. Add corresponding quizzes to `src/data/quizzes.json`
+* Contract debugging questions
+* C++ syntax and Qubic logic
+* Code explanations in simple terms
+* Personalized learning recommendations
 
-### Adding a New Quiz
+Accessible throughout the platform as a floating assistant for always-on help.
 
-1. Edit `src/data/quizzes.json`:
-   ```json
-   {
-     "id": "quiz-id",
-     "courseId": "course-id",
-     "lessonId": "lesson-id",
-     "title": "Quiz Title",
-     "questions": [
-       {
-         "id": "q1",
-         "question": "Question text?",
-         "choices": ["Option A", "Option B", "Option C", "Option D"],
-         "correctAnswer": 0,
-         "explanation": "Explanation of the correct answer"
-       }
-     ]
-   }
-   ```
 
-### Adding Code Templates
+### 🔧 QubiBuilder – No-Code Smart Contract Generator
 
-1. Edit `src/data/templates.json`:
-   ```json
-   {
-     "id": "template-id",
-     "name": "Template Name",
-     "description": "Template description",
-     "language": "cpp",
-     "code": "// C++ template code"
-   }
-   ```
+A visual, form-based smart contract creator that lets you:
 
-## Customization
+* Define contract structure (Token, Voting, Oracle)
+* Add state variables and functions without writing code
+* Automatically generate valid C++ smart contract code
+* Preview and edit code with syntax highlighting
+* Save and export contracts for real deployment
 
-### Modifying AI Tutor Behavior
+It’s perfect for onboarding non-dev users or rapidly prototyping contracts.
 
-Edit the system prompt in `src/utils/openai.ts`:
+### 🚀 Qubic Deployment Support
 
-```typescript
-getSystemPrompt(): string {
-  return `Your custom system prompt here...`;
-}
-```
+Contracts can be:
 
-### Adding New Badge Types
+* Base64 encoded and packaged into simulated `SendTransaction` payloads
+* Structured for compatibility with Qubic RPC
+* Output for integration with wallets or CLI tools
 
-Edit badge logic in course completion handlers and add new badge types to the `Badge` interface.
+This bridges education and real-world development.
 
-### Styling
 
-The project uses Tailwind CSS with a custom theme defined in `tailwind.config.js`. Modify colors, fonts, and animations there.
+### 📊 Progress Tracking & Achievements
 
-## Deployment
+* Track completed lessons, scores, and SBT milestones
+* Earn badges and credentials for finished modules
+* Visual progress dashboards and learning resume
 
-Build the project:
-```bash
-npm run build
-```
 
-Deploy the `dist` folder to any static hosting service (Netlify, Vercel, etc.).
+### 💾 Save & Resume
+
+All user state is stored in-browser:
+
+* Lesson progress
+* Generated contracts
+* AI history
+* Saved quiz results
+
+Users can revisit and continue any session, even after closing the app.
+
+
+## 🌍 Why QubiLearn?
+
+Qubic offers unmatched performance and C++-based smart contracts — but onboarding is still a hurdle for many. **QubiLearn** removes those barriers by combining learning, building, and deploying into one smooth experience.
+
+* No wallets or blockchain setup needed to start learning
+* Encourages ecosystem growth and community contributions
+* Enables devs to go from zero to launch-ready within a single app
+
+
+## 📣 Ideal For:
+
+* Developers new to blockchain
+* C++ developers entering Web3
+* Ecosystem projects onboarding contributors
+* Hackathon teams prototyping quickly
+* Educational partners teaching smart contracts
 
 ## Future Enhancements
 
