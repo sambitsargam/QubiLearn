@@ -1,0 +1,64 @@
+{
+  "contractName": "PriceOracle",
+  "contractType": "Oracle",
+  "variables": [
+    { "type": "map<string, PriceData>", "name": "prices" },
+    { "type": "PublicKey", "name": "oracleOperator" },
+    { "type": "uint64_t", "name": "updateFee" }
+  ],
+  "structs": [
+    {
+      "name": "PriceData",
+      "fields": [
+        { "type": "uint64_t", "name": "price" },
+        { "type": "uint64_t", "name": "timestamp" },
+        { "type": "bool", "name": "valid" },
+        { "type": "string", "name": "source" }
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "name": "updatePrice",
+      "params": [
+        { "type": "string", "name": "symbol" },
+        { "type": "uint64_t", "name": "price" },
+        { "type": "string", "name": "source" }
+      ],
+      "body": "if (getOrigin() != oracleOperator) return false; PriceData data; data.price = price; data.timestamp = getCurrentTick(); data.valid = true; data.source = source; prices[symbol] = data; return true;",
+      "returnType": "bool"
+    },
+    {
+      "name": "getPrice",
+      "params": [
+        { "type": "string", "name": "symbol" }
+      ],
+      "body": "auto it = prices.find(symbol); if (it != prices.end()) return it->second; return PriceData{0, 0, false, \"\"};",
+      "returnType": "PriceData"
+    },
+    {
+      "name": "isPriceValid",
+      "params": [
+        { "type": "string", "name": "symbol" },
+        { "type": "uint64_t", "name": "maxAge" }
+      ],
+      "body": "auto it = prices.find(symbol); if (it != prices.end()) { uint64_t age = getCurrentTick() - it->second.timestamp; return it->second.valid && age <= maxAge; } return false;",
+      "returnType": "bool"
+    },
+    {
+      "name": "setOracleOperator",
+      "params": [
+        { "type": "PublicKey", "name": "newOperator" }
+      ],
+      "body": "if (getOrigin() == oracleOperator) oracleOperator = newOperator;",
+      "returnType": "void"
+    }
+  ],
+  "constructor": {
+    "params": [
+      { "type": "PublicKey", "name": "_operator" },
+      { "type": "uint64_t", "name": "_updateFee" }
+    ],
+    "body": "oracleOperator = _operator; updateFee = _updateFee;"
+  }
+}

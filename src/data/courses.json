@@ -1,0 +1,124 @@
+[
+  {
+    "id": "intro-qubic",
+    "title": "Introduction to Qubic Blockchain",
+    "description": "Learn the fundamentals of Qubic blockchain, its unique architecture, and quantum-resistant features",
+    "difficulty": "Beginner",
+    "estimatedTime": "2 hours",
+    "prerequisites": [],
+    "completed": false,
+    "progress": 0,
+    "lessons": [
+      {
+        "id": "lesson-1",
+        "title": "What is Qubic?",
+        "content": "# What is Qubic?\n\nQubic is a revolutionary blockchain platform that combines the power of artificial intelligence with quantum computing principles. Unlike traditional blockchains, Qubic uses a unique consensus mechanism and supports smart contracts written in C++.\n\n## Key Features\n\n- **Quantum-resistant**: Built with future-proof security\n- **AI Integration**: Native support for AI computations\n- **C++ Smart Contracts**: High-performance contract execution\n- **Computors**: Specialized nodes that process transactions\n\n## Why Learn Qubic?\n\nQubic represents the next generation of blockchain technology, offering:\n\n1. **Performance**: Faster transaction processing\n2. **Security**: Quantum-resistant cryptography\n3. **Innovation**: Cutting-edge AI capabilities\n4. **Developer-friendly**: Familiar C++ syntax\n\n## Getting Started\n\nIn the next lessons, we'll explore how to write your first smart contract and deploy it to the Qubic network.",
+        "estimatedTime": "15 min",
+        "completed": false,
+        "hasQuiz": true
+      },
+      {
+        "id": "lesson-2",
+        "title": "Qubic Architecture",
+        "content": "# Qubic Architecture\n\nUnderstanding the architecture of Qubic is crucial for developing effective smart contracts.\n\n## Core Components\n\n### 1. Computors\nComputors are the backbone of the Qubic network. They:\n- Process transactions\n- Execute smart contracts\n- Maintain network consensus\n- Validate AI computations\n\n### 2. Epochs\nQubic operates in epochs, which are:\n- Fixed time periods\n- Used for consensus\n- Contain multiple transactions\n- Enable predictable execution\n\n### 3. Spectrum\nThe Spectrum is Qubic's ledger system:\n- Stores account balances\n- Tracks contract states\n- Maintains transaction history\n- Ensures data integrity\n\n## Smart Contract Execution\n\nSmart contracts in Qubic:\n- Are written in C++\n- Execute deterministically\n- Have access to AI functions\n- Can interact with other contracts\n\n```cpp\n// Example: Simple contract structure\nclass MyContract {\npublic:\n    void initialize() {\n        // Contract initialization\n    }\n    \n    void execute() {\n        // Contract execution logic\n    }\n};\n```",
+        "codeExample": "class MyContract {\npublic:\n    void initialize() {\n        // Contract initialization\n    }\n    \n    void execute() {\n        // Contract execution logic\n    }\n};",
+        "estimatedTime": "20 min",
+        "completed": false,
+        "hasQuiz": true
+      }
+    ]
+  },
+  {
+    "id": "cpp-fundamentals",
+    "title": "C++ Fundamentals for Blockchain",
+    "description": "Master essential C++ programming concepts needed for Qubic smart contract development",
+    "difficulty": "Beginner",
+    "estimatedTime": "4 hours",
+    "prerequisites": ["intro-qubic"],
+    "completed": false,
+    "progress": 0,
+    "lessons": [
+      {
+        "id": "lesson-3",
+        "title": "C++ Basics for Smart Contracts",
+        "content": "# C++ Basics for Smart Contract Development\n\nC++ is the language of choice for Qubic smart contracts due to its performance and control over system resources.\n\n## Why C++ for Smart Contracts?\n\n- **Performance**: Direct memory management\n- **Determinism**: Predictable execution\n- **Security**: Strong typing system\n- **Efficiency**: Minimal overhead\n\n## Essential C++ Concepts\n\n### 1. Classes and Objects\n```cpp\nclass Token {\nprivate:\n    uint64_t totalSupply;\n    \npublic:\n    Token(uint64_t supply) : totalSupply(supply) {}\n    \n    uint64_t getSupply() const {\n        return totalSupply;\n    }\n};\n```\n\n### 2. Memory Management\n- Stack vs Heap allocation\n- RAII (Resource Acquisition Is Initialization)\n- Smart pointers\n\n### 3. Const Correctness\n```cpp\nclass ReadOnlyData {\npublic:\n    uint64_t getValue() const;  // Promise not to modify\n    void setValue(uint64_t val); // Can modify\n};\n```\n\n### 4. Templates\n```cpp\ntemplate<typename T>\nclass Container {\nprivate:\n    T data;\npublic:\n    void set(const T& value) { data = value; }\n    T get() const { return data; }\n};\n```",
+        "codeExample": "class Token {\nprivate:\n    uint64_t totalSupply;\n    \npublic:\n    Token(uint64_t supply) : totalSupply(supply) {}\n    \n    uint64_t getSupply() const {\n        return totalSupply;\n    }\n};",
+        "estimatedTime": "25 min",
+        "completed": false,
+        "hasQuiz": true
+      },
+      {
+        "id": "lesson-4",
+        "title": "Advanced C++ Features",
+        "content": "# Advanced C++ Features for Blockchain\n\n## STL Containers\n\n### Vector\n```cpp\n#include <vector>\nstd::vector<uint64_t> balances;\nbalances.push_back(1000);\n```\n\n### Map\n```cpp\n#include <map>\nstd::map<std::string, uint64_t> accounts;\naccounts[\"alice\"] = 500;\n```\n\n## Exception Handling\n```cpp\ntry {\n    // Risky operation\n    transfer(from, to, amount);\n} catch (const std::exception& e) {\n    // Handle error\n    return false;\n}\n```\n\n## Lambda Functions\n```cpp\nauto validator = [](uint64_t amount) -> bool {\n    return amount > 0 && amount <= MAX_TRANSFER;\n};\n```",
+        "codeExample": "#include <vector>\n#include <map>\n\nclass AdvancedContract {\nprivate:\n    std::vector<uint64_t> transactions;\n    std::map<std::string, uint64_t> balances;\n    \npublic:\n    bool transfer(const std::string& from, const std::string& to, uint64_t amount) {\n        try {\n            if (balances[from] >= amount) {\n                balances[from] -= amount;\n                balances[to] += amount;\n                transactions.push_back(amount);\n                return true;\n            }\n        } catch (const std::exception& e) {\n            return false;\n        }\n        return false;\n    }\n};",
+        "estimatedTime": "30 min",
+        "completed": false,
+        "hasQuiz": true
+      }
+    ]
+  },
+  {
+    "id": "smart-contract-development",
+    "title": "Smart Contract Development",
+    "description": "Build your first Qubic smart contracts with hands-on examples and best practices",
+    "difficulty": "Intermediate",
+    "estimatedTime": "5 hours",
+    "prerequisites": ["cpp-fundamentals"],
+    "completed": false,
+    "progress": 0,
+    "lessons": [
+      {
+        "id": "lesson-5",
+        "title": "Your First Smart Contract",
+        "content": "# Building Your First Smart Contract\n\n## Contract Structure\n\nEvery Qubic smart contract follows a specific structure:\n\n```cpp\n#include <qpi.h>\n\nclass HelloWorld {\npublic:\n    void initialize() {\n        // Contract initialization code\n    }\n    \n    void sayHello(const std::string& name) {\n        // Contract logic\n        emit(\"Hello, \" + name + \"!\");\n    }\n};\n\n// Export the contract\nHELLO_WORLD_EXPORT(HelloWorld);\n```\n\n## Key Components\n\n1. **Include Headers**: Import Qubic SDK\n2. **Class Definition**: Define your contract class\n3. **Initialize Method**: Setup initial state\n4. **Public Methods**: Contract functions\n5. **Export Macro**: Make contract deployable\n\n## Best Practices\n\n- Always validate inputs\n- Use const correctness\n- Handle edge cases\n- Optimize for gas efficiency",
+        "codeExample": "#include <qpi.h>\n\nclass HelloWorld {\npublic:\n    void initialize() {\n        // Contract initialization code\n    }\n    \n    void sayHello(const std::string& name) {\n        // Contract logic\n        emit(\"Hello, \" + name + \"!\");\n    }\n};\n\n// Export the contract\nHELLO_WORLD_EXPORT(HelloWorld);",
+        "estimatedTime": "35 min",
+        "completed": false,
+        "hasQuiz": true
+      }
+    ]
+  },
+  {
+    "id": "defi-protocols",
+    "title": "DeFi Protocols on Qubic",
+    "description": "Learn to build decentralized finance applications including DEXs, lending protocols, and yield farming",
+    "difficulty": "Advanced",
+    "estimatedTime": "6 hours",
+    "prerequisites": ["smart-contract-development"],
+    "completed": false,
+    "progress": 0,
+    "lessons": [
+      {
+        "id": "lesson-6",
+        "title": "Building a DEX",
+        "content": "# Building a Decentralized Exchange\n\n## AMM (Automated Market Maker)\n\nLearn to build an AMM-based DEX on Qubic:\n\n```cpp\nclass SimpleDEX {\nprivate:\n    uint64_t reserveA;\n    uint64_t reserveB;\n    uint64_t totalLiquidity;\n    \npublic:\n    uint64_t getAmountOut(uint64_t amountIn, uint64_t reserveIn, uint64_t reserveOut) {\n        uint64_t amountInWithFee = amountIn * 997;\n        uint64_t numerator = amountInWithFee * reserveOut;\n        uint64_t denominator = (reserveIn * 1000) + amountInWithFee;\n        return numerator / denominator;\n    }\n    \n    bool swap(uint64_t amountIn, bool aToB) {\n        if (aToB) {\n            uint64_t amountOut = getAmountOut(amountIn, reserveA, reserveB);\n            reserveA += amountIn;\n            reserveB -= amountOut;\n        } else {\n            uint64_t amountOut = getAmountOut(amountIn, reserveB, reserveA);\n            reserveB += amountIn;\n            reserveA -= amountOut;\n        }\n        return true;\n    }\n};\n```",
+        "codeExample": "#include <qpi.h>\n\nclass SimpleDEX {\nprivate:\n    uint64_t reserveA;\n    uint64_t reserveB;\n    uint64_t totalLiquidity;\n    \npublic:\n    uint64_t getAmountOut(uint64_t amountIn, uint64_t reserveIn, uint64_t reserveOut) {\n        uint64_t amountInWithFee = amountIn * 997;\n        uint64_t numerator = amountInWithFee * reserveOut;\n        uint64_t denominator = (reserveIn * 1000) + amountInWithFee;\n        return numerator / denominator;\n    }\n    \n    bool swap(uint64_t amountIn, bool aToB) {\n        if (aToB) {\n            uint64_t amountOut = getAmountOut(amountIn, reserveA, reserveB);\n            reserveA += amountIn;\n            reserveB -= amountOut;\n        } else {\n            uint64_t amountOut = getAmountOut(amountIn, reserveB, reserveA);\n            reserveB += amountIn;\n            reserveA -= amountOut;\n        }\n        return true;\n    }\n};",
+        "estimatedTime": "45 min",
+        "completed": false,
+        "hasQuiz": true
+      }
+    ]
+  },
+  {
+    "id": "ai-integration",
+    "title": "AI-Powered Smart Contracts",
+    "description": "Explore Qubic's unique AI capabilities and build intelligent contracts that can learn and adapt",
+    "difficulty": "Advanced",
+    "estimatedTime": "7 hours",
+    "prerequisites": ["defi-protocols"],
+    "completed": false,
+    "progress": 0,
+    "lessons": [
+      {
+        "id": "lesson-7",
+        "title": "AI Neural Networks in Contracts",
+        "content": "# AI-Powered Smart Contracts\n\n## Qubic's AI Capabilities\n\nQubic allows smart contracts to integrate AI computations:\n\n```cpp\n#include <qpi.h>\n#include <qubic_ai.h>\n\nclass PredictiveContract {\nprivate:\n    NeuralNetwork network;\n    std::vector<double> trainingData;\n    \npublic:\n    void initialize() {\n        // Initialize neural network\n        network.addLayer(10, RELU);\n        network.addLayer(5, RELU);\n        network.addLayer(1, SIGMOID);\n    }\n    \n    double predict(const std::vector<double>& input) {\n        return network.forward(input)[0];\n    }\n    \n    void train(const std::vector<double>& input, double target) {\n        network.backpropagate(input, {target});\n    }\n    \n    bool shouldExecuteTrade(const MarketData& data) {\n        std::vector<double> features = extractFeatures(data);\n        double confidence = predict(features);\n        return confidence > 0.7;\n    }\n};\n```\n\n## Use Cases\n\n- Predictive trading algorithms\n- Dynamic pricing models\n- Fraud detection\n- Automated decision making",
+        "codeExample": "#include <qpi.h>\n#include <qubic_ai.h>\n\nclass PredictiveContract {\nprivate:\n    NeuralNetwork network;\n    std::vector<double> trainingData;\n    \npublic:\n    void initialize() {\n        // Initialize neural network\n        network.addLayer(10, RELU);\n        network.addLayer(5, RELU);\n        network.addLayer(1, SIGMOID);\n    }\n    \n    double predict(const std::vector<double>& input) {\n        return network.forward(input)[0];\n    }\n    \n    void train(const std::vector<double>& input, double target) {\n        network.backpropagate(input, {target});\n    }\n    \n    bool shouldExecuteTrade(const MarketData& data) {\n        std::vector<double> features = extractFeatures(data);\n        double confidence = predict(features);\n        return confidence > 0.7;\n    }\n};",
+        "estimatedTime": "50 min",
+        "completed": false,
+        "hasQuiz": true
+      }
+    ]
+  }
+]

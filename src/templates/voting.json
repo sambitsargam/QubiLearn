@@ -1,0 +1,56 @@
+{
+  "contractName": "VotingSystem",
+  "contractType": "Voting",
+  "variables": [
+    { "type": "vector<Proposal>", "name": "proposals" },
+    { "type": "map<uint32_t, map<PublicKey, bool>>", "name": "hasVoted" },
+    { "type": "uint32_t", "name": "proposalCount" }
+  ],
+  "structs": [
+    {
+      "name": "Proposal",
+      "fields": [
+        { "type": "string", "name": "title" },
+        { "type": "string", "name": "description" },
+        { "type": "uint64_t", "name": "deadline" },
+        { "type": "uint64_t", "name": "yesVotes" },
+        { "type": "uint64_t", "name": "noVotes" },
+        { "type": "bool", "name": "active" },
+        { "type": "PublicKey", "name": "creator" }
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "name": "createProposal",
+      "params": [
+        { "type": "string", "name": "title" },
+        { "type": "string", "name": "description" },
+        { "type": "uint64_t", "name": "duration" }
+      ],
+      "body": "Proposal proposal; proposal.title = title; proposal.description = description; proposal.deadline = getCurrentTick() + duration; proposal.yesVotes = 0; proposal.noVotes = 0; proposal.active = true; proposal.creator = getOrigin(); proposals.push_back(proposal); return proposals.size() - 1;",
+      "returnType": "uint32_t"
+    },
+    {
+      "name": "vote",
+      "params": [
+        { "type": "uint32_t", "name": "proposalId" },
+        { "type": "bool", "name": "support" }
+      ],
+      "body": "if (proposalId >= proposals.size()) return false; Proposal& proposal = proposals[proposalId]; PublicKey voter = getOrigin(); if (!proposal.active || hasVoted[proposalId][voter]) return false; hasVoted[proposalId][voter] = true; if (support) proposal.yesVotes++; else proposal.noVotes++; return true;",
+      "returnType": "bool"
+    },
+    {
+      "name": "getProposal",
+      "params": [
+        { "type": "uint32_t", "name": "proposalId" }
+      ],
+      "body": "if (proposalId < proposals.size()) return proposals[proposalId]; return Proposal();",
+      "returnType": "Proposal"
+    }
+  ],
+  "constructor": {
+    "params": [],
+    "body": "proposalCount = 0;"
+  }
+}

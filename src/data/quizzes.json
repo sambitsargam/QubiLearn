@@ -1,0 +1,110 @@
+[
+  {
+    "id": "quiz-1",
+    "courseId": "intro-qubic",
+    "lessonId": "lesson-1",
+    "title": "Qubic Fundamentals Quiz",
+    "questions": [
+      {
+        "id": "q1",
+        "question": "What makes Qubic different from traditional blockchains?",
+        "choices": [
+          "It uses Python for smart contracts",
+          "It combines AI with quantum computing principles",
+          "It doesn't use consensus mechanisms",
+          "It's centralized"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Qubic is unique because it combines artificial intelligence with quantum computing principles, making it quantum-resistant and AI-capable."
+      },
+      {
+        "id": "q2",
+        "question": "What language is used for Qubic smart contracts?",
+        "choices": [
+          "JavaScript",
+          "Python",
+          "C++",
+          "Solidity"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Qubic smart contracts are written in C++, which provides high performance and precise control over system resources."
+      },
+      {
+        "id": "q3",
+        "question": "What are Computors in the Qubic network?",
+        "choices": [
+          "Regular users",
+          "Specialized nodes that process transactions",
+          "Smart contracts",
+          "AI algorithms"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Computors are specialized nodes in the Qubic network that process transactions, execute smart contracts, and maintain consensus."
+      }
+    ]
+  },
+  {
+    "id": "quiz-2",
+    "courseId": "intro-qubic",
+    "lessonId": "lesson-2",
+    "title": "Qubic Architecture Quiz",
+    "questions": [
+      {
+        "id": "q4",
+        "question": "What is the Spectrum in Qubic?",
+        "choices": [
+          "A type of smart contract",
+          "The ledger system that stores account balances",
+          "A consensus algorithm",
+          "An AI computation unit"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Spectrum is Qubic's ledger system that stores account balances, tracks contract states, and maintains transaction history."
+      },
+      {
+        "id": "q5",
+        "question": "How do epochs work in Qubic?",
+        "choices": [
+          "They are random time periods",
+          "They are fixed time periods used for consensus",
+          "They only contain one transaction",
+          "They are not used in Qubic"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Epochs are fixed time periods in Qubic that are used for consensus, contain multiple transactions, and enable predictable execution."
+      }
+    ]
+  },
+  {
+    "id": "quiz-3",
+    "courseId": "cpp-basics",
+    "lessonId": "lesson-3",
+    "title": "C++ Basics Quiz",
+    "questions": [
+      {
+        "id": "q6",
+        "question": "Why is C++ preferred for Qubic smart contracts?",
+        "choices": [
+          "It's the easiest language to learn",
+          "It provides performance and control over system resources",
+          "It's the only language supported",
+          "It has built-in blockchain features"
+        ],
+        "correctAnswer": 1,
+        "explanation": "C++ is preferred for Qubic smart contracts because it provides high performance, direct memory management, and precise control over system resources."
+      },
+      {
+        "id": "q7",
+        "question": "What does 'const' mean in a C++ method declaration?",
+        "choices": [
+          "The method can modify the object",
+          "The method cannot be called",
+          "The method promises not to modify the object",
+          "The method is private"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The 'const' keyword in a C++ method declaration promises that the method will not modify the object's state, ensuring const correctness."
+      }
+    ]
+  }
+]
