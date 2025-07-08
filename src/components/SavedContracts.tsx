@@ -70,7 +70,7 @@ const SavedContracts: React.FC<SavedContractsProps> = ({
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `${contract.name}.cpp`;
+    a.download = `${contract.name}.h`;
     a.click();
     URL.revokeObjectURL(url);
   };

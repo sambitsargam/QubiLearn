@@ -66,7 +66,7 @@ const ContractEditor: React.FC<ContractEditorProps> = ({
               <div className="w-3 h-3 bg-green-500 rounded-full"></div>
             </div>
             <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-              {contractName || 'Generated Contract'}.cpp
+              {contractName || 'Generated Contract'}.h
             </span>
           </div>
           
@@ -92,7 +92,7 @@ const ContractEditor: React.FC<ContractEditorProps> = ({
               className="flex items-center space-x-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-3 py-2 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all text-sm"
             >
               <Download className="w-4 h-4" />
-              <span>Download .cpp</span>
+              <span>Download .h</span>
             </button>
           </div>
         </div>

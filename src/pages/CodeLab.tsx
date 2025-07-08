@@ -62,7 +62,7 @@ const CodeLab: React.FC = () => {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `${selectedTemplate?.name || 'contract'}.cpp`;
+    a.download = `${selectedTemplate?.name || 'contract'}.h`;
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -243,7 +243,7 @@ const CodeLab: React.FC = () => {
                   Save Project
                 </h4>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
-                  Download your contract as a .cpp file
+                  Download your contract as a .h file
                 </p>
                 <button
                   onClick={handleSave}
